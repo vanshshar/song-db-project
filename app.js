@@ -1,11 +1,11 @@
 const express = require("express");
 const connectDB = require("./config/db");
-// const rateLimiter = require("./middleware/rateLimiter");
+const rateLimiter = require("./middleware/rateLimiter");
 
 
 const app = express();
 // Apply globally
-// app.use(rateLimiter);
+app.use(rateLimiter);
 // Middleware
 app.use(express.json());
 app.use(express.json());   // ✅ MUST be present
